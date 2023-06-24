@@ -1,0 +1,357 @@
+/**selector universal (*) */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /** caja se ajuste*/
+}
+/** ------------ apartado de menu --------------*/
+
+a{
+    /** quitar decoración a texto del menu */
+    text-decoration: none;
+}
+
+nav{
+    width: 100%;   /** tamaño de pantalla*/
+    height: 50px;
+    background-color: rgba(225, 225, 225, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a{
+    padding: 0 20px;
+    color: #222;
+}
+
+nav a:hover{
+    color: #ff7b00;
+}
+
+/** ------------ apartado de header (encabezado) --------------*/
+
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center; /* alinea los valores dentro de la caja se usa previamente display flex*/
+    background-image: url(../img/image1.jpg);
+    height: 600px;   /** se indica a img el alto de imagen*/
+    width: 100%;  /** sin importar el dispositivo matener el tamaño*/
+    /** agregando estailo para que la imagen se adapte a su contenedor*/
+    background-size: cover; /**img se adapata al tamaño del contenedor y no pierda resolución*/
+    background-position: bottom;
+    /** ruta de recorte */
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);/** top, left, right, bottom*/
+    flex-flow: column nowrap; /** en pantalla pequeña el texto lo colocara a la par*/
+}
+
+.texto-principal{
+    color: #fff;
+    font-size: 4rem;
+    font-weight: bold; /** opacidad de la letra*/
+    letter-spacing: 0.3 rem; /** espacion entre letras*/
+    text-transform: uppercase;  /**todo en mayuscula*/
+    text-align: center;
+}
+
+.texto-secundario{
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 0.7rem;
+    font-weight: 400;
+}
+
+header, section{
+    padding: 100px 0;
+}
+
+/** ------------ main  --------------*/
+
+.box-center{
+    width: 80%; 
+    margin: auto; /** el navegador coloca el margen*/
+}
+
+h3{
+    margin-bottom: 70px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+h4{
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #444;
+    font-weight: 400;
+}
+
+#texto-span{
+    color: #ff7b00;
+}
+
+.texto-parrafo{
+    line-height:  40px; /** espacion entre linea */
+    color: #666666;
+}
+
+.about_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /**todo se alinea hacia la izquierda*/
+    flex-flow: row wrap; /** se coloca en fila, ajusta el texto*/
+}
+
+.about_container .content{  
+    flex: 0 0 50%; /** ajusta el parrafo al tamaño de la pantalla */
+}
+
+/**falta ajutar el texto con imagen eso se modificara con mediaquery*/
+
+/** ------------ modificando la imagen --------------*/
+
+.content_image{
+    position: relative; /** para que la imagen respete la posicion de la caja*/
+    flex: 0 0 400px;
+}
+
+.content_image img{
+    width: 100%;
+    height: 310px;
+    object-fit: cover; /** resolución sobre imagen acompañada de clase, etiqueta img*/ /**background-size trabaja solo con contenedores*/
+    box-shadow: 0 0 10px 2px rgba (0, 0, 0, 0.2);/** asignación de sombra */
+    transition: all .5s;
+}
+
+.content_image img:hover{
+    transform: scale(1.1); /** animación en tamaño de img */
+}
+
+/** ------------ apartado de ofertas --------------*/
+.Ofertas{
+    position: relative;
+    background-image: url(../img/image3.jpg);  /** agregar img de fondo*/
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 500px;
+    /** ajustar valores dentro de contenedor*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap; /** cada columna se ajusta al tamaño del contenedor*/ 
+}
+/** ------------ botones --------------*/
+
+.btn{    /** estilo para todos los botones */
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-oferta{
+    background-color: #ff7b00;
+    color: #fff;
+}
+
+.btn-oferta:hover{  /** animación de cursor*/
+    background-color: #cf9259;
+}
+
+/** ------------ Sección de NUESTRO MENÚ  --------------*/
+
+.menu_container{
+    display: flex;
+    justify-content: space-between; /** primer espacio y último sera alineado*/
+    align-items: center;
+    flex-flow: row wrap; 
+    /** row: izquierda a derecha, 
+    nowrap: genera una sola línea, 
+    wrap: genera varias líneas en base a su contenedor*/
+}
+
+.card{
+    width: 30%;
+    height: 300px;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    background-size: cover; 
+    background-position: center;
+    text-align: center;
+}
+
+/** ------ Imagenes dentro de cartas de menu -----*/
+/** nth-child (pseudo-clase) */
+
+.card:nth-child(1){
+    background-image: url(../img/product1.jpg);
+}
+
+.card:nth-child(2){
+    background-image: url(../img/product2.jpg);
+}
+
+.card:nth-child(3){
+    background-image: url(../img/product3.jpg);
+}
+
+.card:nth-child(4){
+    background-image: url(../img/product4.jpg);
+}
+
+.card:nth-child(5){
+    background-image: url(../img/product5.jpg);
+}
+
+.card:nth-child(6){
+    background-image: url(../img/product6.jpg);
+}
+
+/** ------ contenido dentro de cartas de menu -----*/
+ .card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0;
+    transition: all .5s;
+ }
+
+ .card:hover .card-container{
+    opacity: 1;
+ }
+
+ .card-title{
+    font-size: 2.3rem;
+    font-weight: 400;
+    padding: 10px 0 0 0;
+ }
+
+ /** ------ botones dentro de cartas de menu -----*/
+ .btn-card{
+    background-color: #ab561d;
+    color: #fff;
+    transition: all .5s;
+ }
+
+ .btn-card:hover{
+    transform: scale(1.1);
+ }
+
+ /**--- ------------ Footer  ------------------*/
+
+ footer{
+    background-color: #222222;
+ }
+
+ .footer_container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 20px; /** espacio entre contenido entre cajas*/
+ }
+
+ .texto-contacto{
+    font-size: 1.2rem;
+    color: #ff7b00;
+    text-align: left;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 0.5rem;
+ }
+
+.footer-parrafo{
+    line-height: 40px;
+ }
+
+ p{
+    color: white;
+ }
+
+ .icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    width: 60%;
+ }
+
+ .icons a{
+    background-color: #ff7b00;
+    border-radius: 50%;
+    margin: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    transition: all 0.5s;
+ }
+
+ .icons a:hover{
+    background-color: transparent;
+ }
+
+ /**--- ------------ Utilizando Pseudo-Element  ------------------*/
+
+ .overlay, .header::before, .Ofertas::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+ }
+
+ .header *, .Ofertas *{
+    position: relative;
+ }
+ 
+/**--- ------------ Media Queries  ------------------*/
+
+/* Max-WIDTH: 576px; //0px - 576/
+   MIN-WIDTH: 577px; //577px en adelante
+   min-width: 576px and max-width: 768px// medida de tablet */
+
+@media (max-width:576px){  /*dispositivos pequeños*/
+    .texto-principal{
+        font-size: 3rem;
+    }
+
+    .footer_container{
+        grid-template-columns: 1fr;
+    }
+
+    .card{
+        width: 100%;
+    }
+}
+
+@media (max-width: 968px){ /*dispositivos grandes*/
+    .about_container .content{
+        flex: 0 0 100%;
+        margin: 50px 0;
+    }
+
+    .content_image{
+        flex: 0 0 100%;
+    }
+
+    .icons{
+        width: 100%;
+    }
+}
